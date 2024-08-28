@@ -83,6 +83,9 @@ vim.o.confirm = true
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
+-- Spell checking
+vim.opt.spell = true
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic Config & Keymaps
@@ -134,6 +137,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
+--  Save on upper W
+vim.api.nvim_create_user_command('W', 'w', {})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -622,6 +627,7 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        json = { { 'prettier' } },
         javascript = { { 'prettier' } },
         typescript = { { 'prettier' } },
       },
