@@ -84,7 +84,7 @@ vim.o.confirm = true
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 -- Spell checking
-vim.opt.spell = true
+-- vim.opt.spell = true
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -540,6 +540,8 @@ require('lazy').setup({
         },
 
         eslint = {},
+
+        graphql = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -733,7 +735,6 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    -- 'folke/tokyonight.nvim',
     'navarasu/onedark.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
