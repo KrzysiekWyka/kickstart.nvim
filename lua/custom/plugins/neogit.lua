@@ -1,17 +1,15 @@
 return {
   {
     'NeogitOrg/neogit',
-    tag = 'v0.0.1',
+    lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',
       'sindrets/diffview.nvim',
       'nvim-telescope/telescope.nvim',
     },
-    opts = {
-      integrations = {
-        telescope = true,
-        diffview = true,
-      },
+    cmd = 'Neogit',
+    keys = {
+      { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
     },
   },
 }

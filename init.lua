@@ -232,6 +232,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>g', group = '[G]it' },
       },
     },
   },
@@ -542,6 +543,8 @@ require('lazy').setup({
         eslint = {},
 
         graphql = {},
+
+        tsgo = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -798,9 +801,7 @@ require('lazy').setup({
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
-        callback = function()
-          vim.treesitter.start()
-        end,
+        callback = function() vim.treesitter.start() end,
       })
     end,
   },
