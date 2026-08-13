@@ -10,6 +10,8 @@ return {
     cmd = 'Neogit',
     keys = {
       { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
+      { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = 'Git branches' },
+      { '<leader>gs', '<cmd>Telescope git_status<cr>', desc = 'Git status' },
     },
   },
 }
